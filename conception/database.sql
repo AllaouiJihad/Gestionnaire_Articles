@@ -10,14 +10,14 @@ CREATE Table personne(
 );
 CREATE TABLE admin(
     id INT PRIMARY KEY,
-    phone NUMBER,
+    phone VARCHAR(100),
     CIN VARCHAR(100)
 );
 
 ALTER TABLE admin ADD CONSTRAINT fk_admin_personne FOREIGN KEY (id) REFERENCES personne(id);
 
 CREATE TABLE writer(
-    id PRIMARY KEY
+    id INT PRIMARY KEY
 );
 
 ALTER TABLE writer  ADD CONSTRAINT fk_writer_personne FOREIGN KEY (id) REFERENCES personne(id);
